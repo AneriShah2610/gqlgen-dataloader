@@ -35,6 +35,7 @@ func MiddleWareHandler(next http.Handler) http.Handler {
 	})
 }
 
+// ApplicationLoaderMiddleware for datloader
 func ApplicationLoaderMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
 		ldrs := loaders{}
