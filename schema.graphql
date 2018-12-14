@@ -1,0 +1,23 @@
+type Application {
+    id: ID!
+    name: String!
+    details: String!
+    createdBy: String!
+}
+input NewApplication{
+    name: String!
+    details: String!
+    createdBy: String!
+}
+input UpdateApplication{
+    name: String!
+    details: String!
+}
+type Mutation{
+    newApplication(input: NewApplication!): Application!
+    deleteApplication(id: ID!): String!
+    updateApplication(id: ID!, input: UpdateApplication!): Application!
+}
+type Query{
+    applications: [Application!]!
+}
